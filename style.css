@@ -357,3 +357,30 @@ body {
   font-style: italic;
   opacity: 0.8;
 }
+
+/* Botón fijo para volver a "Lo Mío".
+   "position: fixed" hace que quede pegado a esa esquina de la
+   PANTALLA (no de la página), así que se ve siempre, aunque
+   hagas scroll hacia abajo. */
+.boton-volver-lo-mio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-caja);
+  color: var(--color-texto-caja);
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  z-index: 50;
+}
+
+.boton-volver-lo-mio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
