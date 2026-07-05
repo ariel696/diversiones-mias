@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categoría - Mis Diversiones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="index.html" class="volver" id="link-volver">&larr; Volver</a>
+  <h1 id="titulo-categoria"></h1>
+
+  <!-- Este bloque completo solo se muestra cuando estás viendo la categoría
+       entera (no una sección específica). categoria.js lo oculta si hace falta. -->
+  <div id="bloque-secciones">
+    <div id="contenedor-secciones" class="grid-categorias"></div>
+
+    <button id="boton-mostrar-form-seccion" class="boton-nueva-seccion">+ Nueva sección</button>
+    <form id="form-nueva-seccion" class="form-seccion oculto">
+      <input type="text" id="input-nombre-seccion" placeholder="Nombre de la sección (ej: Ver con Nicole)" required>
+      <button type="submit">Crear sección</button>
+    </form>
+
+    <hr class="separador">
+    <h2 id="titulo-general">General</h2>
+  </div>
+
+  <!-- Este botón muestra/oculta el formulario de abajo -->
+  <button id="boton-mostrar-form" class="boton-agregar-nuevo">+ Agregar algo nuevo</button>
+
+  <!-- Empieza oculto (clase "oculto"). El botón de arriba le saca esa clase -->
+  <form id="form-agregar" class="form-agregar oculto">
+    <input type="text" id="input-texto" placeholder="¿Qué te gustaría hacer?" required>
+    <input type="url" id="input-enlace" placeholder="Enlace (opcional, ej: https://...)">
+    <label class="label-archivo">
+      <span>📷 Elegir imagen (opcional)</span>
+      <input type="file" id="input-imagen" accept="image/*">
+    </label>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <div id="lista-items" class="lista-items">
+    <p class="mensaje-vacio">Cargando...</p>
+  </div>
+
+  <!-- categoria.js es un "módulo" porque usa import/export para hablar con Supabase -->
+  <script type="module" src="categoria.js"></script>
+</body>
+</html>

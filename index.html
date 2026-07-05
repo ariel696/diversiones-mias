@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Diversiones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="titulo">MIS DIVERSIONES</h1>
+
+  <!-- Acá se insertan los botones automáticamente con JavaScript.
+       No hace falta escribir cada botón a mano. -->
+  <div id="contenedor-categorias" class="grid-categorias"></div>
+
+  <!-- Botón chico y discreto para crear una categoría nueva -->
+  <button id="boton-mostrar-form-categoria" class="boton-discreto">+ Agregar categoría</button>
+  <form id="form-nueva-categoria" class="form-seccion oculto">
+    <input type="text" id="input-nombre-categoria" placeholder="Nombre de la categoría (ej: Libros)" required>
+    <button type="submit">Crear</button>
+  </form>
+
+  <!-- main.js es un "módulo" porque usa import/export para hablar con Supabase -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+/* ==========================================================
+   VARIABLES DE COLOR
+   Si cambiás un valor acá, cambia en TODAS las páginas,
+   porque todas usan este mismo archivo style.css
+   ========================================================== */
+:root {
+  --color-fondo: #17176b;       /* azul marino de fondo */
+  --color-titulo: #ff6a5c;      /* rojo/coral del título */
+  --color-caja: #f2c2c2;        /* rosa de los botones/cajas */
+  --color-texto-caja: #111111;  /* texto negro dentro de las cajas rosas */
+  --color-texto-claro: #f2c2c2; /* texto claro sobre el fondo azul */
+  --fuente-principal: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  padding: 50px 60px;
+}
+
+/* ===== Página principal ===== */
+
+.titulo {
+  color: var(--color-titulo);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin: 0 0 60px 0;
+}
+
+.grid-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.boton-categoria {
+  background-color: var(--color-caja);
+  color: var(--color-texto-caja);
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 20px 30px;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boton-categoria:hover {
+  transform: scale(1.03);
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón chico y discreto (ej: "+ Agregar categoría" en la página principal) */
+.boton-discreto {
+  background: none;
+  border: 1px dashed var(--color-texto-claro);
+  color: var(--color-texto-claro);
+  opacity: 0.65;
+  font-family: var(--fuente-principal);
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 35px;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.boton-discreto:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Página de categoría ===== */
+
+.volver {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: opacity 0.15s ease;
+}
+
+.volver:hover {
+  opacity: 0.7;
+}
+
+#titulo-categoria {
+  color: var(--color-titulo);
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+/* Botón para crear una sección nueva (estilo "contorno", para diferenciarlo
+   del botón sólido de "Agregar algo nuevo") */
+.boton-nueva-seccion {
+  background-color: transparent;
+  color: var(--color-texto-claro);
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  border: 2px solid var(--color-texto-claro);
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.boton-nueva-seccion:hover {
+  background-color: var(--color-texto-claro);
+  color: var(--color-fondo);
+}
+
+.form-seccion {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin-bottom: 30px;
+  animation: aparecer 0.2s ease;
+}
+
+.form-seccion input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: none;
+  font-family: var(--fuente-principal);
+  font-size: 0.95rem;
+  background-color: var(--color-caja);
+  color: var(--color-texto-caja);
+}
+
+.form-seccion button {
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--color-texto-claro);
+  color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.separador {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 35px 0 20px 0;
+  max-width: 700px;
+}
+
+#titulo-general {
+  color: var(--color-texto-claro);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+#bloque-secciones .grid-categorias {
+  margin-bottom: 20px;
+}
+.boton-agregar-nuevo {
+  background-color: var(--color-titulo);
+  color: white;
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 24px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boton-agregar-nuevo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Clase que oculta elementos (formulario cerrado).
+   Usamos !important para asegurarnos de que esta regla
+   siempre gane, sin importar en qué orden estén escritas
+   las demás reglas de CSS. */
+.oculto {
+  display: none !important;
+}
+
+.form-agregar {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 480px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-agregar input[type="text"],
+.form-agregar input[type="url"] {
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-family: var(--fuente-principal);
+  font-size: 0.95rem;
+  border: none;
+  background-color: var(--color-caja);
+  color: var(--color-texto-caja);
+}
+
+.form-agregar input[type="text"]::placeholder,
+.form-agregar input[type="url"]::placeholder {
+  color: #555;
+}
+
+/* Input de archivo "disfrazado" con una etiqueta más prolija */
+.label-archivo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px dashed var(--color-texto-claro);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--color-texto-claro);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.label-archivo input[type="file"] {
+  max-width: 55%;
+  color: var(--color-texto-claro);
+  font-family: var(--fuente-principal);
+  font-size: 0.8rem;
+}
+
+.form-agregar button[type="submit"] {
+  padding: 12px;
+  border-radius: 6px;
+  background-color: var(--color-titulo);
+  color: white;
+  border: none;
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.form-agregar button[type="submit"]:hover {
+  opacity: 0.85;
+}
+
+.lista-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 700px;
+}
+
+.item {
+  background-color: var(--color-caja);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  cursor: grab;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.item.arrastrando {
+  opacity: 0.4;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+}
+
+.item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.item-contenido {
+  flex: 1;
+  color: var(--color-texto-caja);
+}
+
+.item-contenido p {
+  margin: 0 0 8px 0;
+}
+
+.item-contenido a {
+  color: #17176b;
+  font-weight: bold;
+}
+
+.item-eliminar {
+  background: none;
+  border: 2px solid var(--color-texto-caja);
+  border-radius: 6px;
+  color: var(--color-texto-caja);
+  font-family: var(--fuente-principal);
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.item-eliminar:hover {
+  background-color: var(--color-texto-caja);
+  color: var(--color-caja);
+}
+
+.mensaje-vacio {
+  color: var(--color-texto-claro);
+  font-style: italic;
+  opacity: 0.8;
+}
